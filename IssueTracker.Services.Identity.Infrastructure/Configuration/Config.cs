@@ -56,7 +56,7 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "IdentityService"
+                        //"IdentityService"
                         
                     },
                     AccessTokenLifetime = 60*60*2, // 2 hours
