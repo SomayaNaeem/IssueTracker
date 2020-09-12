@@ -22,5 +22,7 @@
     <ProjectReference Include="..\IssueTracker.Services.Identity.Infrastructure\IssueTracker.Services.Identity.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 
 </Project>
