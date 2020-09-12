@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using IssueTracker.Services.Identity.Application;
@@ -9,13 +10,18 @@ using IssueTracker.Services.Identity.Application.Common.Interfaces;
 using IssueTracker.Services.Identity.Infrastructure;
 using IssueTracker.Services.Identity.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using IdentityServer4.Extensions;
+using IssueTracker.Services.Identity.WebUI.Filters;
 
 namespace IssueTracker.Services.Identity.WebUI
 {
@@ -36,30 +42,39 @@ namespace IssueTracker.Services.Identity.WebUI
 			services.AddScoped<ICurrentUserService, CurrentUserService>();
 			services.AddInfrastructure(Configuration, Environment, typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
 
-			services.AddControllers().AddControllersAsServices();
+			services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter())).AddControllersAsServices();
 			services.AddMvcCore(options =>
 			{
 				options.EnableEndpointRouting = false;
-				//options.Filters.Add(new ApiExceptionFilter());
 			}).AddAuthorization();
 			services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
-		 // .AddNewtonsoftJson();
+			services.AddSwaggerGen(c =>
+			{
+				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users API", Version = "v1" });
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			app.UseHttpsRedirection();
-			JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 			app.UseStaticFiles();
 			app.UseHttpsRedirection();
 
 			app.UseRouting();
+			// Enable middleware to serve generated Swagger as a JSON endpoint.
+			app.UseSwagger();
 
+			// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+			// specifying the Swagger JSON endpoint.
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Users API V1");
+			});
 			app.UseIdentityServer();
 			app.UseRouting();
 			app.UseAuthentication();
@@ -75,6 +90,7 @@ namespace IssueTracker.Services.Identity.WebUI
 					template: "{controller=Home}/{action=Index}/{id?}");
 			});
 			app.UseMvcWithDefaultRoute();
+
 			//app.UseEndpoints(endpoints =>
 			//{
 			//	endpoints.MapControllers();

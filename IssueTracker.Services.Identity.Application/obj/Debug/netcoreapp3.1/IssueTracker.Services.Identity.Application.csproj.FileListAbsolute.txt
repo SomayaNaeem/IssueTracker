@@ -3,7 +3,10 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.AssemblyInfoInputs.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.AssemblyInfo.cs
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.pdb
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.csproj.CoreCompileInputs.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.dll
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.csprojAssemblyReference.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.pdb
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.csproj.CopyComplete
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.csproj.CoreCompileInputs.cache
