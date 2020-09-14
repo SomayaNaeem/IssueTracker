@@ -6,4 +6,3 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.dll
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.pdb
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Domain.csprojAssemblyReference.cache
