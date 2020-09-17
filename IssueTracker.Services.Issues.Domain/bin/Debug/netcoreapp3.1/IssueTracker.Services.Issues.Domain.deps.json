@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "IssueTracker.Services.Issues.Domain/1.0.0": {
+        "runtime": {
+          "IssueTracker.Services.Issues.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IssueTracker.Services.Issues.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
