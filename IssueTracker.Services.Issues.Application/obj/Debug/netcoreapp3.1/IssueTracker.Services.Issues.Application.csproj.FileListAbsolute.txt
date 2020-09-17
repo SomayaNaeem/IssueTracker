@@ -1,0 +1,12 @@
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.deps.json
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csprojAssemblyReference.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csproj.CoreCompileInputs.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.AssemblyInfoInputs.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.AssemblyInfo.cs
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csproj.CopyComplete
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
