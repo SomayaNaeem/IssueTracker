@@ -27,7 +27,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Issues.Domain\\IssueTracker.Services.Issues.Domain.csproj": {
+                "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Issues.Domain\\IssueTracker.Services.Issues.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
