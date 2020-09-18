@@ -14,7 +14,8 @@ namespace IssueTracker.Services.Issues.Infrastructure.Persistence.Configurations
 			builder.HasIndex(p => p.Key).IsUnique();
 			builder.Property(p => p.Key).Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore);
 			builder.HasKey(p => p.Id);
-			builder.HasMany(p => p.Stories).WithOne(p => p.Project).HasForeignKey(p => p.ProjectId);
+			builder.HasMany(p => p.Stories).WithOne(p => p.Project).HasForeignKey(p => p.ProjectId).OnDelete(DeleteBehavior.Cascade); 
+			
 		}
 	}
 }

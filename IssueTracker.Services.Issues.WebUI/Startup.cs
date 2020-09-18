@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using IssueTracker.Services.Issues.Application;
 using IssueTracker.Services.Issues.Application.Common.Interfaces;
 using IssueTracker.Services.Issues.Infrastructure;
+using IssueTracker.Services.Issues.WebUI.Filters;
 using IssueTracker.Services.Issues.WebUI.Services;
+using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +34,8 @@ namespace IssueTracker.Services.Issues.WebUI
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddControllers();
+			services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter())).AddNewtonsoftJson();
+			services.AddApplication();
 			services.AddInfrastructure(Configuration);
 			services.AddHttpContextAccessor();
 			services.AddScoped<ICurrentUserService, CurrentUserService>();
@@ -37,6 +43,39 @@ namespace IssueTracker.Services.Issues.WebUI
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Issues APIs", Version = "v1" });
 			});
+			services.AddMvcCore().AddAuthorization();
+			services.AddAuthentication(options =>
+			{
+				options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			}).AddJwtBearer(options =>
+			{
+				options.Authority = Configuration.GetSection("Identity:IdentityAuthUrl").Value;
+				options.RequireHttpsMetadata = false;
+				
+				options.Audience = Configuration.GetSection("Identity:APIName").Value;
+			});
+			//string s=Configuration.GetSection("Identity:APIName").Value;
+			//services.AddMediatR(Assembly.GetExecutingAssembly());
+			//services.AddAuthentication("token")
+			//.AddJwtBearer("token", options =>
+			//{
+			// options.Authority = Configuration.GetSection("Identity:IdentityAuthUrl").Value;
+			// options.Audience = Configuration.GetSection("Identity:APIName").Value;
+
+			// options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+
+			// // if token does not contain a dot, it is a reference token
+			//// options.ForwardDefaultSelector = Selector.ForwardReferenceToken("introspection");
+			//})
+			//.AddOAuth2Introspection("token", options =>
+			//{
+			// options.Authority = Configuration.GetSection("Identity:IdentityAuthUrl").Value;// IdentityConstants.ApplicationScheme;
+
+			// // this maps to the API resource name and secret
+			// options.ClientId = "mvc";
+			// options.ClientSecret = "secret";
+			//});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +98,7 @@ namespace IssueTracker.Services.Issues.WebUI
 			{
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Issues APIs V1");
 			});
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>

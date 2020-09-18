@@ -1,4 +1,5 @@
-﻿using IdentityServer4;
+﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             return new List<ApiResource>
             {
                 new ApiResource("IdentityService", "Identity Service"),
+               // new ApiResource("IssuesService.API", "Issues Service"),
+                 new ApiResource("IssuesService.API", "IssuesService.API")
+                {
+                    Scopes = 
+                    {
+                        "IssuesService.API"
+                    }
+                }
             };
         }
 
@@ -22,6 +31,15 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile()
+            };
+        }
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                // backward compat
+                new ApiScope("IssuesService.API"){UserClaims={ JwtClaimTypes.Scope } },
+                new ApiScope("IdentityService"){UserClaims={ JwtClaimTypes.Scope } }
             };
         }
         public static IEnumerable<Client> GetClients(IConfiguration configuration)
@@ -38,7 +56,7 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                     },
                     ClientUri = configuration.GetValue<string>("AuthSettings:Web:RedirectURL"),
                     AllowedGrantTypes = GrantTypes.Code,
-                    AccessTokenType=AccessTokenType.Reference,
+                    AccessTokenType=AccessTokenType.Jwt,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = false,
                     AllowOfflineAccess = true,
@@ -56,8 +74,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        //"IdentityService"
-                        
+                        "IssuesService.API"
+
                     },
                     AccessTokenLifetime = 60*60*2, // 2 hours
                     IdentityTokenLifetime= 60*60*2 // 2 hours
