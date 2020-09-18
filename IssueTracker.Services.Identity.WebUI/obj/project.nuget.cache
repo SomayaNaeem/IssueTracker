@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1941lj6nZ2s8KtQhLXnu3UhKWe9EzxfODBbubiVNlVRdK1b1FbQI8L6Y3Yq6vjl43RvIQvAWRPpq2DANQS+XyQ==",
+  "dgSpecHash": "/UcV88h9W5bg7uyIEvYmcztsJbjmHUKXYDMlkSVV0zt5mjIdgAeX7NonT+ykljmgRBseTp2pnR3imk+Rsd+rpw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.WebUI\\IssueTracker.Services.Identity.WebUI.csproj",
   "expectedPackageFiles": [
@@ -76,6 +76,7 @@
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.8\\microsoft.extensions.identity.stores.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.logging\\3.1.8\\microsoft.extensions.logging.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.8\\microsoft.extensions.logging.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.logging.filter\\1.1.2\\microsoft.extensions.logging.filter.1.1.2.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.options\\3.1.8\\microsoft.extensions.options.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.8\\microsoft.extensions.primitives.3.1.8.nupkg.sha512",
@@ -123,6 +124,9 @@
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\serilog.extensions.logging\\3.0.1\\serilog.extensions.logging.3.0.1.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\serilog.sinks.file\\4.1.0\\serilog.sinks.file.4.1.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",

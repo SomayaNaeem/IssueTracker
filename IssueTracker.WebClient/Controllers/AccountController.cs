@@ -22,5 +22,13 @@ namespace IssueTracker.WebClient.Controllers
             ViewBag.Token = accessToken;
             return View();
         }
+        public async Task<IActionResult> Signout()
+        {
+            await HttpContext.SignOutAsync("Cookies");
+            await HttpContext.SignOutAsync("oidc");
+            var homeUrl = Url.Action(nameof(HomeController.Index));
+            return new SignOutResult("oidc",
+                new AuthenticationProperties { RedirectUri = homeUrl });
+        }
     }
 }

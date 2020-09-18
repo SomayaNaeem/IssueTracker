@@ -11,7 +11,7 @@ namespace IssueTracker.Services.Issues.Application.Common.Interfaces
 {
 	public interface IApplicationDbContext
 	{
-		public DbSet<Project> Projects { get; set; }
+		public DbSet<Domain.Entities.Project> Projects { get; set; }
 		public DbSet<Story> Stories { get; set; }
 		public DbSet<Task> Tasks { get; set; }
 		public DbSet<Bug> Bugs { get; set; }

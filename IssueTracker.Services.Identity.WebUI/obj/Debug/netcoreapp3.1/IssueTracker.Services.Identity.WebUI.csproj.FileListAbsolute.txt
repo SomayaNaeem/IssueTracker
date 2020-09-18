@@ -158,9 +158,6 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Infrastructure.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\IssueTracker.Services.Identity.Application.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.csprojAssemblyReference.cache
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.csproj.CoreCompileInputs.cache
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.RazorAssemblyInfo.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.RazorAssemblyInfo.cs
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.AssemblyInfoInputs.cache
@@ -196,3 +193,10 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.dll
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.genruntimeconfig.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\Serilog.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Filter.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.csproj.CoreCompileInputs.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Identity.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Identity.WebUI.MvcApplicationPartsAssemblyInfo.cache

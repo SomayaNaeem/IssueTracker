@@ -66,6 +66,7 @@ namespace IssueTracker.Services.Identity.Infrastructure
               .AddInMemoryIdentityResources(Config.GetResources())
           .AddInMemoryApiResources(Config.GetApis())
           .AddInMemoryClients(Config.GetClients(configuration))
+          .AddInMemoryApiScopes(Config.GetApiScopes())
      .AddOperationalStore(options =>
      {
          options.ConfigureDbContext = b =>
@@ -81,14 +82,15 @@ namespace IssueTracker.Services.Identity.Infrastructure
             services.AddTransient<IIdentityService, IdentityService>();
             services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
 
-            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-           .AddIdentityServerAuthentication(options =>
-           {
-               options.Authority = configuration.GetSection("Identity:IdentityAuthUrl").Value;
-               options.RequireHttpsMetadata = false;
-               options.ApiName = configuration.GetSection("Identity:APIName").Value;
-           });
-           
+
+           // services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+           //.AddIdentityServerAuthentication(options =>
+           //{
+           //    options.Authority = configuration.GetSection("Identity:IdentityAuthUrl").Value;
+           //    options.RequireHttpsMetadata = false;
+           //    options.ApiName = configuration.GetSection("Identity:APIName").Value;
+           //});
+
             return services;
         }
 
