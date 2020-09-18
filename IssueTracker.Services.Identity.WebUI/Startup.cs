@@ -22,6 +22,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using IdentityServer4.Extensions;
 using IssueTracker.Services.Identity.WebUI.Filters;
+using IdentityServer4.Services;
+using Serilog;
 
 namespace IssueTracker.Services.Identity.WebUI
 {
@@ -41,12 +43,12 @@ namespace IssueTracker.Services.Identity.WebUI
 			services.AddApplication(Configuration);
 			services.AddScoped<ICurrentUserService, CurrentUserService>();
 			services.AddInfrastructure(Configuration, Environment, typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-
 			services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter())).AddControllersAsServices();
 			services.AddMvcCore(options =>
 			{
 				options.EnableEndpointRouting = false;
 			}).AddAuthorization();
+			services.AddScoped<IProfileService, ProfileService>();
 			services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
 			services.AddSwaggerGen(c =>
 			{
@@ -55,15 +57,27 @@ namespace IssueTracker.Services.Identity.WebUI
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
 		{
 			JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			app.UseStaticFiles();
+			var serilog = new LoggerConfiguration()
+			.MinimumLevel.Verbose()
+			.Enrich.FromLogContext()
+			.WriteTo.File(@"identityserver4_log.txt");
+
+			loggerFactory.WithFilter(new FilterLoggerSettings
+				{
+					{ "IdentityServer4", LogLevel.Debug },
+					{ "Microsoft", LogLevel.Warning },
+					{ "System", LogLevel.Warning },
+				}).AddSerilog(serilog.CreateLogger());
+			app.UseHsts();
 			app.UseHttpsRedirection();
+			app.UseStaticFiles();
 
 			app.UseRouting();
 			// Enable middleware to serve generated Swagger as a JSON endpoint.

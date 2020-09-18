@@ -47,16 +47,16 @@ namespace IssueTracker.Services.Issues.Infrastructure
                         entry.Entity.LastModified = _dateTime.Now;
                         break;
 
-                    case EntityState.Deleted:
-                        if (entry.CurrentValues["IsDeleted"].ToString() == "False")
-                        {
-                            entry.State = EntityState.Modified;
-                            entry.CurrentValues["IsDeleted"] = true;
-                            entry.Entity.LastModifiedBy = _currentUserService.UserId;
-                            entry.Entity.LastModified = _dateTime.Now;
-                        }
+                    //case EntityState.Deleted:
+                    //    if (entry.CurrentValues["IsDeleted"].ToString() == "False")
+                    //    {
+                    //        entry.State = EntityState.Modified;
+                    //        entry.CurrentValues["IsDeleted"] = true;
+                    //        entry.Entity.LastModifiedBy = _currentUserService.UserId;
+                    //        entry.Entity.LastModified = _dateTime.Now;
+                    //    }
 
-                        break;
+                       // break;
                 }
             }
 
