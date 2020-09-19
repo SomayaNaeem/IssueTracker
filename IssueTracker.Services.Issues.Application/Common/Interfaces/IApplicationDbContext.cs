@@ -13,10 +13,11 @@ namespace IssueTracker.Services.Issues.Application.Common.Interfaces
 	{
 		public DbSet<Domain.Entities.Project> Projects { get; set; }
 		public DbSet<Story> Stories { get; set; }
-		public DbSet<Task> Tasks { get; set; }
-		public DbSet<Bug> Bugs { get; set; }
+		public DbSet<Domain.Entities.Task> Tasks { get; set; }
+		public DbSet<Domain.Entities.Bug> Bugs { get; set; }
 		public DbSet<ProjectParticipants> ProjectParticipants { get; set; }
-		public DbSet<Participant> Participants { get; set; }
+		public DbSet<Domain.Entities.Participant> Participants { get; set; }
+		public DbSet<Domain.Entities.StoryParticipants> StoryParticipants { get; set; }
 		Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 	}
 }

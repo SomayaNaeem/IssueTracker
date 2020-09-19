@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NT2KaOc2mmr8DM8MuoLAAfpfLwvuOQkK5IMlgUrpnxXVT78bUiQKAE93qaa/0gZGWtIEVrA01Fk8Kx+pEvdO9w==",
+  "dgSpecHash": "kkNaRSp0Ic4DWY0KbRDaAThi5QpADia0/4JwDPzBjcTbjroV9dTnAQaragXOkzXGankytjFk32fg0Ti2ggTQOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Issues.WebUI\\IssueTracker.Services.Issues.WebUI.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,7 @@
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.8\\microsoft.extensions.fileproviders.physical.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.8\\microsoft.extensions.filesystemglobbing.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.http\\3.1.8\\microsoft.extensions.http.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.logging\\3.1.8\\microsoft.extensions.logging.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.8\\microsoft.extensions.logging.abstractions.3.1.8.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
@@ -93,7 +94,7 @@
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

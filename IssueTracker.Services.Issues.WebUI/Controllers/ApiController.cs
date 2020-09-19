@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace IssueTracker.Services.Issues.WebUI.Controllers
 {
     [ApiController]
-    [Route("api/Issues/[controller]")]
+    [Route("api/[controller]")]
     [Authorize]
     public abstract class ApiController : ControllerBase
     {

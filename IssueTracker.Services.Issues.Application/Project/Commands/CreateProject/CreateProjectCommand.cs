@@ -36,7 +36,7 @@ namespace IssueTracker.Services.Issues.Application.Project.Commands.CreateProjec
             var Participant = _context.Participants.FirstOrDefault(p => p.Id == _currentUserService.UserId);
             if (Participant==null)
             {
-                Participant = new Participant()
+                Participant = new Domain.Entities.Participant()
                 {
                     Name = _currentUserService.FullName,
                     Id = _currentUserService.UserId,

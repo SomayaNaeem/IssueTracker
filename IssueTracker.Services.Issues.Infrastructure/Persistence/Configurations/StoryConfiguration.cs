@@ -12,10 +12,10 @@ namespace IssueTracker.Services.Issues.Infrastructure.Persistence.Configurations
 		public void Configure(EntityTypeBuilder<Story> builder)
 		{
 			builder.HasKey(p => p.Id);
-			builder.HasOne(p => p.Project).WithMany(p => p.Stories).HasForeignKey(p => p.ProjectId);
-			//builder.HasOne(p => p.Participant).WithOne().HasForeignKey<Story>(p => p.ReporterId);
+			builder.HasOne(p => p.Project).WithMany(p => p.Stories).HasForeignKey(p => p.ProjectId).OnDelete(DeleteBehavior.Cascade);
 			builder.Property(p => p.ReporterId).Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore);
-			builder.Ignore(p => p.Participants);
+			//builder.HasMany(p => p.StoryParticipants).WithOne(p => p.Story).OnDelete(DeleteBehavior.SetNull);
+			
 		}
 	}
 }

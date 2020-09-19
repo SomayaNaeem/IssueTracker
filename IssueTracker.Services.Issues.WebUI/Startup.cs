@@ -38,7 +38,10 @@ namespace IssueTracker.Services.Issues.WebUI
 			services.AddApplication();
 			services.AddInfrastructure(Configuration);
 			services.AddHttpContextAccessor();
+			services.AddHttpClient();
 			services.AddScoped<ICurrentUserService, CurrentUserService>();
+			services.AddScoped<IParticipantService, ParticipantService>();
+
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Issues APIs", Version = "v1" });

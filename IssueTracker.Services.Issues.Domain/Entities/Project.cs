@@ -7,6 +7,10 @@ namespace IssueTracker.Services.Issues.Domain.Entities
 {
 	public class Project:AuditableEntity
 	{
+		public Project()
+		{
+			ProjectParticipants = new List<ProjectParticipants>();
+		}
 		public long Id { get; set; }
 		public string Name { get; set; }
 		public string Key { get; set; }

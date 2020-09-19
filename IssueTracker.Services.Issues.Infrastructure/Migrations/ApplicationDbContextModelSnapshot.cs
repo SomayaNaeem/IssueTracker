@@ -25,7 +25,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AssigneeId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -45,14 +45,11 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ParticipantId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("ReplicateSteps")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReporterId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -65,11 +62,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParticipantId");
-
-                    b.HasIndex("ReporterId")
-                        .IsUnique()
-                        .HasFilter("[ReporterId] IS NOT NULL");
+                    b.HasIndex("AssigneeId");
 
                     b.HasIndex("StoryId");
 
@@ -149,7 +142,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
             modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.ProjectParticipants", b =>
                 {
-                    b.Property<long>("ProjectId")
+                    b.Property<long?>("ProjectId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("ParticipantId")
@@ -203,9 +196,6 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ParticipantId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<long>("ProjectId")
                         .HasColumnType("bigint");
 
@@ -223,11 +213,39 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParticipantId");
-
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Stories");
+                });
+
+            modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.StoryParticipants", b =>
+                {
+                    b.Property<string>("StoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ParticipantId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StoryId", "ParticipantId");
+
+                    b.HasIndex("ParticipantId");
+
+                    b.ToTable("StoryParticipants");
                 });
 
             modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.Task", b =>
@@ -236,7 +254,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AssigneeId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -256,11 +274,8 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ParticipantId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("ReporterId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -273,11 +288,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParticipantId");
-
-                    b.HasIndex("ReporterId")
-                        .IsUnique()
-                        .HasFilter("[ReporterId] IS NOT NULL");
+                    b.HasIndex("AssigneeId");
 
                     b.HasIndex("StoryId");
 
@@ -286,13 +297,10 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
             modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.Bug", b =>
                 {
-                    b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", null)
-                        .WithMany("Bugs")
-                        .HasForeignKey("ParticipantId");
-
                     b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", "Participant")
-                        .WithOne()
-                        .HasForeignKey("IssueTracker.Services.Issues.Domain.Entities.Bug", "ReporterId");
+                        .WithMany("Bugs")
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Story", "Story")
                         .WithMany("Bugs")
@@ -316,10 +324,6 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
 
             modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.Story", b =>
                 {
-                    b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", null)
-                        .WithMany("Stories")
-                        .HasForeignKey("ParticipantId");
-
                     b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Project", "Project")
                         .WithMany("Stories")
                         .HasForeignKey("ProjectId")
@@ -327,19 +331,32 @@ namespace IssueTracker.Services.Issues.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.StoryParticipants", b =>
+                {
+                    b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", "Participant")
+                        .WithMany("StoryParticipants")
+                        .HasForeignKey("ParticipantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Story", "Story")
+                        .WithMany("StoryParticipants")
+                        .HasForeignKey("StoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("IssueTracker.Services.Issues.Domain.Entities.Task", b =>
                 {
-                    b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", null)
-                        .WithMany("Tasks")
-                        .HasForeignKey("ParticipantId");
-
                     b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Participant", "Participant")
-                        .WithOne()
-                        .HasForeignKey("IssueTracker.Services.Issues.Domain.Entities.Task", "ReporterId");
+                        .WithMany("Tasks")
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("IssueTracker.Services.Issues.Domain.Entities.Story", "Story")
                         .WithMany("Tasks")
-                        .HasForeignKey("StoryId");
+                        .HasForeignKey("StoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

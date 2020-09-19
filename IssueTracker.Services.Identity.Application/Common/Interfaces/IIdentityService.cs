@@ -1,5 +1,6 @@
 ﻿using IssueTracker.Services.Identity.Application.Common.Models;
 using IssueTracker.Services.Identity.Application.SignUp.Commands;
+using IssueTracker.Services.Identity.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,6 @@ namespace IssueTracker.Services.Identity.Application.Common.Interfaces
 	{
 		Task<string> GetUserNameAsync(string userId);
 		Task<(Result Result, string id)> CreateUserAsync(SignUpCommand requesterSignUp);
-
+		Task<ApplicationUser> GetUser(string email);
 	}
 }

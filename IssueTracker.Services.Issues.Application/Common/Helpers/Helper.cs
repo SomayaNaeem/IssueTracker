@@ -9,12 +9,21 @@ namespace IssueTracker.Services.Issues.Application.Common.Helpers
 	{
 		public static string GenerateRandomString()
 		{
-			Random random = new Random((int)DateTime.Now.Ticks);
 			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-			char[] chars_arr = new char[4];
-			for (int i = 0; i < 4; i++)
+			return GenerateRandomString(chars, 4);
+		}
+		public static string GenerateIssueId(string Projectkey)
+		{
+			const string numbers = "0123456789";
+			return string.Concat(Projectkey,"-",1, GenerateRandomString(numbers, 2));
+		}
+		public static string GenerateRandomString(string pattern,int size)
+		{
+			Random random = new Random((int)DateTime.Now.Ticks);
+			char[] chars_arr = new char[size];
+			for (int i = 0; i < size; i++)
 			{
-				chars_arr[i] = chars[random.Next(chars.Length)];
+				chars_arr[i] = pattern[random.Next(pattern.Length)];
 			}
 			return new string(chars_arr);
 		}
