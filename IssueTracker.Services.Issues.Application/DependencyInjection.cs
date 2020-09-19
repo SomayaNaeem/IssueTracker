@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using IssueTracker.Services.Issues.Application.Common.Behaviours;
+using IssueTracker.Services.Issues.Application.Common.Interfaces;
+using IssueTracker.Services.Issues.Application.Participant;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,7 +23,6 @@ namespace IssueTracker.Services.Issues.Application
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
-
             return services;
         }
 

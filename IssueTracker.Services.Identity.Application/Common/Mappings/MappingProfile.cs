@@ -7,7 +7,7 @@ using System.Text;
 
 namespace IssueTracker.Services.Identity.Application.Common.Mappings
 {
-    public class MappingProfile : Profile
+    public class MappingProfile :AutoMapper.Profile
     {
         public MappingProfile()
         {

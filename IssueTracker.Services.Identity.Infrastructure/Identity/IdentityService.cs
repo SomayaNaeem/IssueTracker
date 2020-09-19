@@ -34,6 +34,11 @@ namespace IssueTracker.Services.Identity.Infrastructure.Identity
 			return (result.ToApplicationResult(), userId);
 		}
 
+		public async Task<ApplicationUser> GetUser(string email)
+		{
+			return await _userManager.FindByEmailAsync(email);
+		}
+
 		public async Task<string> GetUserNameAsync(string userId)
 		{
 			var user = await _userManager.Users.FirstAsync(u => u.Id == userId);

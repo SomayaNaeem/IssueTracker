@@ -9,6 +9,13 @@ namespace IssueTracker.Services.Issues.Domain.Entities
 {
 	public class Story:AuditableEntity,IIssue
 	{
+		public Story()
+		{
+			StoryParticipants = new List<StoryParticipants>();
+			Bugs = new List<Bug>();
+			Tasks = new List<Task>();
+
+		}
 		public string Id { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
@@ -20,6 +27,6 @@ namespace IssueTracker.Services.Issues.Domain.Entities
 		public Project Project { get; set; }
 		public IList<Task> Tasks { get; set; }
 		public IList<Bug> Bugs { get; set; }
-		public IList<Participant> Participants { get; set; }
+		public IList<StoryParticipants> StoryParticipants { get; set; }
 	}
 }

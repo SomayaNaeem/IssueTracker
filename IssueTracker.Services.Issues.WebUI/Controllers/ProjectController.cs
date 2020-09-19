@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using IssueTracker.Services.Issues.Application.Common.Models;
 using IssueTracker.Services.Issues.Application.Project.Commands.CreateProject;
 using IssueTracker.Services.Issues.Application.Project.Commands.DeleteProject;
-using Microsoft.AspNetCore.Http;
+using IssueTracker.Services.Issues.Application.Project.Queries.GetProjectParticipants;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IssueTracker.Services.Issues.WebUI.Controllers
@@ -23,5 +21,13 @@ namespace IssueTracker.Services.Issues.WebUI.Controllers
 
             return NoContent();
         }
+
+        #region Queries
+        [HttpGet("{id}")]
+        public async Task<ActionResult<PagedList<ParticipantsListDto>>> Get(long id,int pageSize, int PageNumber)
+        {
+            return await Mediator.Send(new GetProjectParticipantsQuery() { ProjectId=id,PageNumber = PageNumber, PageSize = pageSize });
+        }
+        #endregion
     }
 }

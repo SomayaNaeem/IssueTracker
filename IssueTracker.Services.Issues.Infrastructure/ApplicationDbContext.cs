@@ -30,6 +30,7 @@ namespace IssueTracker.Services.Issues.Infrastructure
 		public DbSet<Bug> Bugs { get; set; }
 		public DbSet<ProjectParticipants> ProjectParticipants { get; set; }
         public DbSet<Participant> Participants { get; set; }
+        public DbSet<StoryParticipants> StoryParticipants { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -72,6 +73,8 @@ namespace IssueTracker.Services.Issues.Infrastructure
             builder.Entity<Bug>().HasQueryFilter(p => !p.IsDeleted);
             builder.Entity<Participant>().HasQueryFilter(p => !p.IsDeleted);
             builder.Entity<ProjectParticipants>().HasQueryFilter(p => !p.IsDeleted);
+            builder.Entity<StoryParticipants>().HasQueryFilter(p => !p.IsDeleted);
+
             base.OnModelCreating(builder);
 
 
