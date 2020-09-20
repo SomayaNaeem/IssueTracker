@@ -22,6 +22,7 @@ Follow these steps to get your development environment set up:
      ```
      dotnet build
      ```
+  4. change the connectionstring in appsettings.json with your server name, user Id and password of both IssueTracker.Identity.WebUI and IssueTracker.Issues.WebUI
   4. Next, launch the IssueTracker.Identity.WebUI` and IssueTracker.Issues.WebUI` withen running multiple project:
       ```
 	 dotnet run
