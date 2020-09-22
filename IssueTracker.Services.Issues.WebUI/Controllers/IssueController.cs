@@ -97,6 +97,7 @@ namespace IssueTracker.Services.Issues.WebUI.Controllers
 			return NoContent();
 		}
 		#endregion
+	
 		#region Queries
 		[HttpGet("{id}")]
 		public async Task<ActionResult<IssuesListDto>> Get(string id,long projectId, int pageSize, int PageNumber)

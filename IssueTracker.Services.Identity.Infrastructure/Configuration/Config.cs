@@ -14,13 +14,13 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             return new List<ApiResource>
             {
                 new ApiResource("IdentityService", "Identity Service"),
-               // new ApiResource("IssuesService.API", "Issues Service"),
                  new ApiResource("IssuesService.API", "IssuesService.API")
                 {
                     Scopes = 
                     {
                         "IssuesService.API"
-                    }
+                    },
+                    ApiSecrets = { new Secret("secret".Sha256()) }
                 }
             };
         }
@@ -38,8 +38,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             return new List<ApiScope>
             {
                 // backward compat
-                new ApiScope("IssuesService.API"){UserClaims={ JwtClaimTypes.Scope } },
-                new ApiScope("IdentityService"){UserClaims={ JwtClaimTypes.Scope } }
+                new ApiScope("IssuesService.API"),
+                new ApiScope("IdentityService")
             };
         }
         public static IEnumerable<Client> GetClients(IConfiguration configuration)
@@ -48,27 +48,31 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             {
                 new Client
                 {
-                    ClientId = configuration.GetValue<string>("AuthSettings:Web:ClientId"),
+                    ClientId = configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
                     ClientName = "MVC Client",
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret(configuration.GetValue<string>("AuthSettings:Web:Secret").Sha256())
+                        new Secret(configuration.GetValue<string>("AuthSettings:Swagger:Secret").Sha256())
                     },
-                    ClientUri = configuration.GetValue<string>("AuthSettings:Web:RedirectURL"),
+                    ClientUri = configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
                     AllowedGrantTypes = GrantTypes.Code,
-                    AccessTokenType=AccessTokenType.Jwt,
+                    AccessTokenType=AccessTokenType.Reference,
                     AllowAccessTokensViaBrowser = true,
+                     AlwaysSendClientClaims = true,
+                    UpdateAccessTokenClaimsOnRefresh = true,
                     RequireConsent = false,
                     AllowOfflineAccess = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
+                    RequirePkce=true,
                     RedirectUris = new List<string>
                     {
-                       configuration.GetValue<string>("AuthSettings:Web:RedirectURL")
+                       configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                      // "https://localhost:44397/signin-oidc"
                     },
-                    PostLogoutRedirectUris = new List<string>
-                    {
-                       configuration.GetValue<string>("AuthSettings:Web:PostLogoutRedirectURL")
-                    },
+                    //PostLogoutRedirectUris = new List<string>
+                    //{
+                    //   configuration.GetValue<string>("AuthSettings:Swagger:PostLogoutRedirectURL")
+                    //},
                     AllowedScopes = new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,

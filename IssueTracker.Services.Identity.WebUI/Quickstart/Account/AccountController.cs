@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityServerHost.Quickstart.UI
@@ -37,6 +38,7 @@ namespace IdentityServerHost.Quickstart.UI
         private readonly IClientStore _clientStore;
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
+        private readonly IPersistedGrantService _persistedGrantService;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -44,7 +46,8 @@ namespace IdentityServerHost.Quickstart.UI
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager
+            UserManager<ApplicationUser> userManager,
+            IPersistedGrantService persistedGrantService
             )
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
@@ -55,6 +58,7 @@ namespace IdentityServerHost.Quickstart.UI
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
+            _persistedGrantService = persistedGrantService;
         }
 
         /// <summary>
@@ -397,7 +401,7 @@ namespace IdentityServerHost.Quickstart.UI
         {
             // get context information (client name, post logout redirect URI and iframe for federated signout)
             var logout = await _interaction.GetLogoutContextAsync(logoutId);
-
+            var subjectId = HttpContext.User.Identity.GetSubjectId();
             var vm = new LoggedOutViewModel
             {
                 AutomaticRedirectAfterSignOut = AccountOptions.AutomaticRedirectAfterSignOut,
@@ -422,10 +426,23 @@ namespace IdentityServerHost.Quickstart.UI
                             // before we signout and redirect away to the external IdP for signout
                             vm.LogoutId = await _interaction.CreateLogoutContextAsync();
                         }
-
+                        try
+                        {
+                            await _signInManager.SignOutAsync();
+                            // await HttpContext.Authentication.SignOutAsync(idp, new AuthenticationProperties { RedirectUri = url });
+                        }
+                        catch (NotSupportedException)
+                        {
+                        }
                         vm.ExternalAuthenticationScheme = idp;
                     }
                 }
+                // delete authentication cookie
+                await _signInManager.SignOutAsync();
+
+                // set this so UI rendering sees an anonymous user
+                HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity());
+                await _persistedGrantService.RemoveAllGrantsAsync(subjectId, logout?.ClientId);
             }
 
             return vm;

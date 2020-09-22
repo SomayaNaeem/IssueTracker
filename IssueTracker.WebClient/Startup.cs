@@ -45,7 +45,7 @@ namespace IssueTracker.WebClient
                 options.RequireHttpsMetadata = false;
                 options.ClientId = "mvc";
                 options.ClientSecret = "secret";
-                options.ResponseType = "code id_token";
+                options.ResponseType = "code";
                 options.SignedOutRedirectUri = Configuration.GetValue<string>("SignedOutRedirectUri");
                 options.SaveTokens = true;
                 options.GetClaimsFromUserInfoEndpoint = true;
