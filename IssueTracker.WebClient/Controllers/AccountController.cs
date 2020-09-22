@@ -10,10 +10,12 @@ namespace IssueTracker.WebClient.Controllers
 {
     public class AccountController : Controller
     {
+       
+
         [Authorize]
         public async Task<IActionResult> SignIn()
         {
-            return RedirectToAction(nameof(HomeController.Index));
+            return RedirectToAction("Index", "Home");
         }
         [HttpGet]
         public async Task<IActionResult> GetToken()
