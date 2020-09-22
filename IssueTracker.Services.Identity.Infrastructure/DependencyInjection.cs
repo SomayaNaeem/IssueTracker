@@ -81,16 +81,6 @@ namespace IssueTracker.Services.Identity.Infrastructure
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
             services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
-
-
-           // services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-           //.AddIdentityServerAuthentication(options =>
-           //{
-           //    options.Authority = configuration.GetSection("Identity:IdentityAuthUrl").Value;
-           //    options.RequireHttpsMetadata = false;
-           //    options.ApiName = configuration.GetSection("Identity:APIName").Value;
-           //});
-
             return services;
         }
 

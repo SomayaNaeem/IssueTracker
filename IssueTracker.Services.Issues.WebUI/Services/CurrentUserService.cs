@@ -9,9 +9,9 @@ namespace IssueTracker.Services.Issues.WebUI.Services
 	{
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
         {
-            UserId = httpContextAccessor.HttpContext?.User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue("sub");
             FullName = httpContextAccessor.HttpContext?.User?.FindFirstValue("FullName");
-            Email= httpContextAccessor.HttpContext?.User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
+            Email= httpContextAccessor.HttpContext?.User?.FindFirstValue("email");            
 
         }
 

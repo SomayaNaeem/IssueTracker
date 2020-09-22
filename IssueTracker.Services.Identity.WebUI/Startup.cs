@@ -54,6 +54,16 @@ namespace IssueTracker.Services.Identity.WebUI
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users API", Version = "v1" });
 			});
+			services.AddCors(options =>
+			{
+				options.AddPolicy("CorsPolicy", cors =>
+						cors.AllowAnyOrigin()
+							.AllowAnyMethod()
+							.WithExposedHeaders("Content-Disposition")
+							.AllowAnyHeader());
+			});
+
+
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,10 +85,11 @@ namespace IssueTracker.Services.Identity.WebUI
 					{ "Microsoft", LogLevel.Warning },
 					{ "System", LogLevel.Warning },
 				}).AddSerilog(serilog.CreateLogger());
+		
 			app.UseHsts();
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
-
+			app.UseCors("CorsPolicy");
 			app.UseRouting();
 			// Enable middleware to serve generated Swagger as a JSON endpoint.
 			app.UseSwagger();
@@ -104,11 +115,6 @@ namespace IssueTracker.Services.Identity.WebUI
 					template: "{controller=Home}/{action=Index}/{id?}");
 			});
 			app.UseMvcWithDefaultRoute();
-
-			//app.UseEndpoints(endpoints =>
-			//{
-			//	endpoints.MapControllers();
-			//});
 		}
 	}
 }

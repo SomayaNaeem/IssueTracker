@@ -151,9 +151,6 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.W
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.csprojAssemblyReference.cache
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.csproj.CoreCompileInputs.cache
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.AssemblyInfoInputs.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.AssemblyInfo.cs
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.RazorTargetAssemblyInfo.cache
@@ -164,3 +161,16 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.W
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.genruntimeconfig.cache
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.csproj.CoreCompileInputs.cache
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.WebUI\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.WebUI.MvcApplicationPartsAssemblyInfo.cache
