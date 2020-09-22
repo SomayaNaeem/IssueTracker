@@ -22,13 +22,24 @@ Follow these steps to get your development environment set up:
      ```
      dotnet build
      ```
-  4. Next, launch the IssueTracker.Identity.WebUI` and IssueTracker.Issues.WebUI` withen running multiple project:
+
+  4. change the connectionstring with your server name, user Id and password in the following
+  * IssueTracker.Services.Identity.WebUI and IssueTracker.Services.Issues.WebUI
+  	- appsettings.json 
+  * IssueTracker.Services.Identity.Infrastructure.Factories
+	- ApplicationDbContextFactory.cs
+	- ConfigurationDbContextFactory.cs 
+	- PersistedGrantDbContextFactory
+  * IssueTracker.Services.Issues.Infrastructure.Factories
+  	 - ApplicationDbContextFactory.cs
+
+  5. Next, launch the IssueTracker.Identity.WebUI` and IssueTracker.Issues.WebUI` withen running multiple project:
       ```
 	 dotnet run
 	 ```
-  5. Launch [https://localhost:44374/swagger/index.html) in your browser to view the Issues APIs
+  6. Launch [https://localhost:44374/swagger/index.html) in your browser to view the Issues APIs
   
-  6. Launch [https://localhost:44357/swagger/index.html) in your browser to view Identity APIs
+  7. Launch [https://localhost:44357/swagger/index.html) in your browser to view Identity APIs
 
 ## Technologies
 * .NET Core 3.1
