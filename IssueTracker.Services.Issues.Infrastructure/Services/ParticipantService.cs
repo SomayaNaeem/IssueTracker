@@ -16,10 +16,12 @@ namespace IssueTracker.Services.Issues.Infrastructure
 	{
 		private readonly IHttpClientFactory httpClient;
 		IConfiguration configuration;
-		public ParticipantService(IHttpClientFactory _httpClient, IConfiguration _configuration)
+		private readonly ICurrentUserService _currentUserService;
+		public ParticipantService(IHttpClientFactory _httpClient, IConfiguration _configuration, ICurrentUserService currentUserService)
 		{
 			httpClient = _httpClient;
 			configuration = _configuration;
+			_currentUserService = currentUserService;
 		}
 
 		public async Task<Domain.Entities.Participant> GetParticipant(string email)
@@ -27,6 +29,8 @@ namespace IssueTracker.Services.Issues.Infrastructure
 			using (var request = new HttpRequestMessage(HttpMethod.Get, configuration["Identity:GetUserInfoUrl"] + email))
 			{
 				var client = httpClient.CreateClient();
+				request.Headers.Authorization = new AuthenticationHeaderValue("Bearer",_currentUserService.Token);
+
 				using (var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead))
 				{
 					if (response.IsSuccessStatusCode)

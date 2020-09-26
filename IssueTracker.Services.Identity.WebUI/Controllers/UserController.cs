@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using IssueTracker.Services.Identity.Application.Profile.Queries;
 using IssueTracker.Services.Identity.Application.SignUp;
 using IssueTracker.Services.Identity.Application.SignUp.Commands;
@@ -18,7 +19,7 @@ namespace IssueTracker.Services.Identity.WebUI.Controllers
         {
             return await Mediator.Send(command);
         }
-        [AllowAnonymous]
+        [Authorize(AuthenticationSchemes = IdentityServerAuthenticationDefaults.AuthenticationScheme)]
         [HttpGet("Profile/{email}")]
         public async Task<ProfileInfoDto> ViewProfile(string email)
         {

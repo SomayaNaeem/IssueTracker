@@ -7,15 +7,12 @@ using IssueTracker.Services.Identity.Infrastructure.Configuration;
 using IssueTracker.Services.Identity.Infrastructure.Identity;
 using IssueTracker.Services.Identity.Infrastructure.Persistence;
 using IssueTracker.Services.Identity.Infrastructure.Services;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IssueTracker.Services.Identity.Infrastructure
 {
@@ -28,6 +25,7 @@ namespace IssueTracker.Services.Identity.Infrastructure
                    configuration.GetConnectionString("IdentityConnection")));
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+            services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
@@ -78,9 +76,27 @@ namespace IssueTracker.Services.Identity.Infrastructure
      })
      .AddAspNetIdentity<ApplicationUser>();
 
+            services.AddHttpContextAccessor();
+            services.AddMvcCore().AddAuthorization()
+            .AddNewtonsoftJson();
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                 .AddOAuth2Introspection(IdentityServerAuthenticationDefaults.AuthenticationScheme, options =>
+                 {
+                     options.Authority = configuration.GetSection("Identity:IdentityAuthUrl").Value;
+                     // this maps to the API resource name and secret
+                     options.ClientId = configuration.GetSection("Identity:APIName").Value;
+                     options.ClientSecret = configuration.GetSection("Identity:API_secret").Value;
+                 });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", cors =>
+                        cors.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader());
+            });
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
-            services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
             return services;
         }
 

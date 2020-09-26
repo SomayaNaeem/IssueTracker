@@ -13,12 +13,20 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
         {
             return new List<ApiResource>
             {
-                new ApiResource("IdentityService", "Identity Service"),
+                new ApiResource("IdentityService", "Identity Service")
+                {
+                 Scopes =
+                    {
+                        "IdentityService"
+                    },
+                    ApiSecrets = { new Secret("secret".Sha256()) }
+                },
                  new ApiResource("IssuesService.API", "IssuesService.API")
                 {
                     Scopes = 
                     {
-                        "IssuesService.API"
+                        "IssuesService.API",
+                        "IdentityService"
                     },
                     ApiSecrets = { new Secret("secret".Sha256()) }
                 }
@@ -49,7 +57,7 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                 new Client
                 {
                     ClientId = configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
-                    ClientName = "MVC Client",
+                    ClientName = "Swagger",
                     ClientSecrets = new List<Secret>
                     {
                         new Secret(configuration.GetValue<string>("AuthSettings:Swagger:Secret").Sha256())
@@ -66,7 +74,9 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                     RequirePkce=true,
                     RedirectUris = new List<string>
                     {
-                       configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                       configuration.GetValue<string>("AuthSettings:Swagger:IdentityRedirectURL"),
+                       configuration.GetValue<string>("AuthSettings:Swagger:IssuesRedirectURL"),
+
                       // "https://localhost:44397/signin-oidc"
                     },
                     //PostLogoutRedirectUris = new List<string>
@@ -78,7 +88,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "IssuesService.API"
+                        "IssuesService.API",
+                        "IdentityService"
 
                     },
                     AccessTokenLifetime = 60*60*2, // 2 hours
