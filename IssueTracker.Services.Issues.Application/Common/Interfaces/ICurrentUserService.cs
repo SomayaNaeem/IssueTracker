@@ -9,5 +9,6 @@ namespace IssueTracker.Services.Issues.Application.Common.Interfaces
         string UserId { get; }
         string FullName { get; }
         string Email { get; }
+        string Token { get; }
     }
 }

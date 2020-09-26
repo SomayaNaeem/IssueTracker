@@ -63,7 +63,7 @@ namespace IssueTracker.Services.Issues.WebUI
 						{
 							AuthorizationUrl = Configuration.GetSection("Identity:Authorization_endpoint").Value,
 							TokenUrl = Configuration.GetSection("Identity:Token_endpoint").Value,
-							Scopes = new Dictionary<string, string> { { Configuration.GetSection("Identity:APIName").Value, "Issues API" } }
+							Scopes = new Dictionary<string, string> { { Configuration.GetSection("Identity:API_Scope").Value, "Issues API" } }
 						}
 					}
 				});
