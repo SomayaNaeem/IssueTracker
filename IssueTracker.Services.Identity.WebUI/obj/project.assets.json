@@ -3799,7 +3799,10 @@
         },
         "runtime": {
           "bin/placeholder/IssueTracker.Services.Identity.Infrastructure.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
