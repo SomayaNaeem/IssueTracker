@@ -16,11 +16,13 @@ namespace IssueTracker.Services.Identity.Application.Profile.Queries
 	public  class GetProfileInfoQueryHandler : IRequestHandler<GetProfileInfoQuery, ProfileInfoDto>
 	{
 		private readonly IIdentityService _identityService;
+		private readonly ICurrentUserService _currentUserService;
 		private readonly IMapper _mapper;
-		public GetProfileInfoQueryHandler(IIdentityService identityService, IMapper mapper)
+		public GetProfileInfoQueryHandler(IIdentityService identityService, IMapper mapper,ICurrentUserService currentUserService)
 		{
 			_identityService = identityService;
 			_mapper = mapper;
+			_currentUserService = currentUserService;
 		}
 		public async Task<ProfileInfoDto> Handle(GetProfileInfoQuery request, CancellationToken cancellationToken)
 		{

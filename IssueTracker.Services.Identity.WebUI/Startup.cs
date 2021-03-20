@@ -1,30 +1,25 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Net;
 using System.Reflection;
-using System.Threading.Tasks;
 using IssueTracker.Services.Identity.Application;
 using IssueTracker.Services.Identity.Application.Common.Interfaces;
 using IssueTracker.Services.Identity.Infrastructure;
 using IssueTracker.Services.Identity.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using IdentityServer4.Extensions;
 using IssueTracker.Services.Identity.WebUI.Filters;
 using IdentityServer4.Services;
 using Serilog;
-
+using NSwag.Generation.Processors.Security;
+using NSwag;
+using NSwag.AspNetCore;
+using OpenApiOAuthFlows = NSwag.OpenApiOAuthFlows;
+using OpenApiSecurityScheme = NSwag.OpenApiSecurityScheme;
+using System.Collections.Generic;
 namespace IssueTracker.Services.Identity.WebUI
 {
 	public class Startup
@@ -41,19 +36,34 @@ namespace IssueTracker.Services.Identity.WebUI
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddApplication(Configuration);
-			services.AddScoped<ICurrentUserService, CurrentUserService>();
 			services.AddInfrastructure(Configuration, Environment, typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
 			services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter())).AddControllersAsServices();
-			services.AddMvcCore(options =>
+			services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);			
+			services.AddTransient<IProfileService, ProfileService>();
+			services.AddTransient<ICurrentUserService, CurrentUserService>();
+			services.AddOpenApiDocument(options =>
 			{
-				options.EnableEndpointRouting = false;
-			}).AddAuthorization();
-			services.AddScoped<IProfileService, ProfileService>();
-			services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
-			services.AddSwaggerGen(c =>
-			{
-				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users API", Version = "v1" });
+				options.DocumentName = "v1";
+				options.Title = "Identity API";
+				options.Version = "v1";
+
+				options.AddSecurity("oauth2", new OpenApiSecurityScheme
+				{
+					Type = OpenApiSecuritySchemeType.OAuth2,
+					Flows = new OpenApiOAuthFlows
+					{
+						AuthorizationCode = new NSwag.OpenApiOAuthFlow
+						{
+							AuthorizationUrl = Configuration.GetSection("Identity:Authorization_endpoint").Value,
+							TokenUrl = Configuration.GetSection("Identity:Token_endpoint").Value,
+							Scopes = new Dictionary<string, string> { { Configuration.GetSection("Identity:APIName").Value, "Identity API" } }
+						}
+					}
+				});
+
+				options.OperationProcessors.Add(new OperationSecurityScopeProcessor("oauth2"));
 			});
+
 			services.AddCors(options =>
 			{
 				options.AddPolicy("CorsPolicy", cors =>
@@ -91,17 +101,19 @@ namespace IssueTracker.Services.Identity.WebUI
 			app.UseStaticFiles();
 			app.UseCors("CorsPolicy");
 			app.UseRouting();
-			// Enable middleware to serve generated Swagger as a JSON endpoint.
-			app.UseSwagger();
-
-			// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-			// specifying the Swagger JSON endpoint.
-			app.UseSwaggerUI(c =>
-			{
-				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Users API V1");
-			});
 			app.UseIdentityServer();
-			app.UseRouting();
+
+			app.UseOpenApi();
+			app.UseSwaggerUi3(options =>
+			{
+				options.OAuth2Client = new OAuth2ClientSettings
+				{
+					ClientId = Configuration.GetSection("Identity:Client_id").Value,
+					ClientSecret = Configuration.GetSection("Identity:API_secret").Value,
+					AppName = Configuration.GetSection("Identity:APIName").Value,
+					UsePkceWithAuthorizationCodeGrant = true
+				};
+			});
 			app.UseAuthentication();
 			app.UseAuthorization();
 			app.UseMvc(routes =>
