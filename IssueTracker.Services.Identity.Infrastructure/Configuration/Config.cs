@@ -13,20 +13,12 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
         {
             return new List<ApiResource>
             {
-                new ApiResource("IdentityService", "Identity Service")
-                {
-                 Scopes =
-                    {
-                        "IdentityService"
-                    },
-                    ApiSecrets = { new Secret("secret".Sha256()) }
-                },
+                new ApiResource("IdentityService", "Identity Service"),
                  new ApiResource("IssuesService.API", "IssuesService.API")
                 {
                     Scopes = 
                     {
-                        "IssuesService.API",
-                        "IdentityService"
+                        "IssuesService.API"
                     },
                     ApiSecrets = { new Secret("secret".Sha256()) }
                 }
@@ -56,13 +48,13 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             {
                 new Client
                 {
-                    ClientId = configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
-                    ClientName = "Swagger",
+                    ClientId = "mvc",//configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
+                    ClientName = "MVC Client",
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret(configuration.GetValue<string>("AuthSettings:Swagger:Secret").Sha256())
+                        new Secret("secret".Sha256())
                     },
-                    ClientUri = configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                    ClientUri = "https://localhost:44397",//configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
                     AllowedGrantTypes = GrantTypes.Code,
                     AccessTokenType=AccessTokenType.Reference,
                     AllowAccessTokensViaBrowser = true,
@@ -74,10 +66,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                     RequirePkce=true,
                     RedirectUris = new List<string>
                     {
-                       configuration.GetValue<string>("AuthSettings:Swagger:IdentityRedirectURL"),
-                       configuration.GetValue<string>("AuthSettings:Swagger:IssuesRedirectURL"),
-
-                      // "https://localhost:44397/signin-oidc"
+                       //configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                       "https://localhost:44397/signin-oidc"
                     },
                     //PostLogoutRedirectUris = new List<string>
                     //{

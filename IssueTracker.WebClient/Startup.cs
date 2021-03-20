@@ -54,8 +54,11 @@ namespace IssueTracker.WebClient
                 options.Scope.Add("profile");
                 options.Scope.Add("offline_access");
                 options.Scope.Add("IssuesService.API");
-                
-            });
+                options.Scope.Add("IdentityService");
+				
+
+
+			});
         }
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

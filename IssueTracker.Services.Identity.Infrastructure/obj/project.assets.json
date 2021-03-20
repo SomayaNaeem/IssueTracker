@@ -6872,19 +6872,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\": {}
+    "C:\\Users\\SomayaNaeem\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\IssueTracker.Services.Identity.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\IssueTracker.Services.Identity.Infrastructure.csproj",
       "projectName": "IssueTracker.Services.Identity.Infrastructure",
-      "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\IssueTracker.Services.Identity.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\IssueTracker.Services.Identity.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\SomayaNaeem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Somaya.Ibrahim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SomayaNaeem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6898,11 +6902,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {
-              "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj"
+            "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {
+              "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj"
             },
-            "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
-              "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj"
+            "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
+              "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj"
             }
           }
         }
@@ -6981,8 +6985,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Infrastructure\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

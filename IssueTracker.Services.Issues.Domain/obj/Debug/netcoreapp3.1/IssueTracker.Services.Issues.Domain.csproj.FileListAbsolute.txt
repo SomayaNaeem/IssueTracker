@@ -7,3 +7,12 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.D
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.dll
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.csprojAssemblyReference.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.deps.json
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.dll
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.csprojAssemblyReference.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.AssemblyInfoInputs.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.AssemblyInfo.cs
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.csproj.CoreCompileInputs.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.dll
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Domain\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
