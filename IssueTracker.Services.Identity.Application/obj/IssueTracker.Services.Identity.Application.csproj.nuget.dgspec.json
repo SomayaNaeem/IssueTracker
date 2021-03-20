@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {}
+    "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {
+    "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj",
+        "projectUniqueName": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj",
         "projectName": "IssueTracker.Services.Identity.Application",
-        "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj",
-        "packagesPath": "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\obj\\",
+        "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\IssueTracker.Services.Identity.Application.csproj",
+        "packagesPath": "C:\\Users\\SomayaNaeem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Somaya.Ibrahim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SomayaNaeem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
-                "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj"
+              "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
+                "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj"
               }
             }
           }
@@ -91,21 +94,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
+    "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj",
         "projectName": "IssueTracker.Services.Identity.Domain",
-        "projectPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj",
-        "packagesPath": "C:\\Users\\Somaya.Ibrahim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Somaya.Ibrahim\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\obj\\",
+        "projectPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\IssueTracker.Services.Identity.Domain.csproj",
+        "packagesPath": "C:\\Users\\SomayaNaeem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SomayaNaeem\\source\\repos\\IssueTracker\\IssueTracker.Services.Identity.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Somaya.Ibrahim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SomayaNaeem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,7 +156,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -48,13 +48,13 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
             {
                 new Client
                 {
-                    ClientId = configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
+                    ClientId = "mvc",//configuration.GetValue<string>("AuthSettings:Swagger:ClientId"),
                     ClientName = "MVC Client",
                     ClientSecrets = new List<Secret>
                     {
-                        new Secret(configuration.GetValue<string>("AuthSettings:Swagger:Secret").Sha256())
+                        new Secret("secret".Sha256())
                     },
-                    ClientUri = configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                    ClientUri = "https://localhost:44397",//configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
                     AllowedGrantTypes = GrantTypes.Code,
                     AccessTokenType=AccessTokenType.Reference,
                     AllowAccessTokensViaBrowser = true,
@@ -66,8 +66,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                     RequirePkce=true,
                     RedirectUris = new List<string>
                     {
-                       configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
-                      // "https://localhost:44397/signin-oidc"
+                       //configuration.GetValue<string>("AuthSettings:Swagger:RedirectURL"),
+                       "https://localhost:44397/signin-oidc"
                     },
                     //PostLogoutRedirectUris = new List<string>
                     //{
@@ -78,7 +78,8 @@ namespace IssueTracker.Services.Identity.Infrastructure.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "IssuesService.API"
+                        "IssuesService.API",
+                        "IdentityService"
 
                     },
                     AccessTokenLifetime = 60*60*2, // 2 hours

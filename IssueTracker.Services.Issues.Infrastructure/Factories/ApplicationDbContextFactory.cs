@@ -32,7 +32,7 @@ namespace IssueTracker.Services.Issues.Infrastructure.Factories
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            optionsBuilder.UseSqlServer(@"Server=SOMAYA-IBRAHIM\SQLEXPRESS;Database=IssueTracker.Dev.DB.Issues;User Id=sa;Password=1234;MultipleActiveResultSets=true",
+            optionsBuilder.UseSqlServer(@"Server=SOMAYA-NAEEM\\SQLEXPRESS;Database=IssueTracker.Dev.DB.Issues;MultipleActiveResultSets=true",
                  sqlServerOptionsAction: o => o.MigrationsAssembly("IssueTracker.Services.Issues.Infrastructure"));
 
             return new ApplicationDbContext(optionsBuilder.Options, _currentUserService, _dateTime);

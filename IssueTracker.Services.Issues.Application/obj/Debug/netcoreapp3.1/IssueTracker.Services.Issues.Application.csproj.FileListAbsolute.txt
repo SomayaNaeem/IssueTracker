@@ -10,3 +10,15 @@ C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.A
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.dll
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
 C:\Users\Somaya.Ibrahim\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csproj.CoreCompileInputs.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.deps.json
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.dll
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.dll
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\bin\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Domain.pdb
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csprojAssemblyReference.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.AssemblyInfoInputs.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.AssemblyInfo.cs
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csproj.CoreCompileInputs.cache
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.csproj.CopyComplete
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.dll
+C:\Users\SomayaNaeem\source\repos\IssueTracker\IssueTracker.Services.Issues.Application\obj\Debug\netcoreapp3.1\IssueTracker.Services.Issues.Application.pdb
